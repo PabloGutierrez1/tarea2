@@ -1,13 +1,8 @@
 package frontend;
 
 import backend.ControladorBackend;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import javax.swing.*;
+import java.awt.*;
 
 public class PanelCargaDatos extends JPanel {
     private final JLabel lblTotalEjercicios = new JLabel("Total ejercicios: -");
@@ -61,9 +56,5 @@ public class PanelCargaDatos extends JPanel {
 
     public void setEstadoInfo(String mensaje) {
         lblEstado.setText("Estado: " + mensaje);
-    }
-
-    public void setEstadoError(String mensaje) {
-        lblEstado.setText("Error: " + mensaje);
     }
 }

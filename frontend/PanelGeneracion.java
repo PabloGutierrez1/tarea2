@@ -1,25 +1,13 @@
 package frontend;
 
 import backend.ControladorBackend;
-
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerNumberModel;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 
 public class PanelGeneracion extends JPanel {
     private final ControladorBackend backend;
 
-    private final javax.swing.JTextField txtCliente = new javax.swing.JTextField();
+    private final JTextField txtCliente = new JTextField();
     private final JSpinner spSemana = new JSpinner(new SpinnerNumberModel(1, 1, 200, 1));
 
     private final JSpinner spCardio = new JSpinner(new SpinnerNumberModel(0, 0, 20, 1));
@@ -30,23 +18,18 @@ public class PanelGeneracion extends JPanel {
 
     public PanelGeneracion(ControladorBackend backend, Runnable onCancelar) {
         this.backend = backend;
-
-        setLayout(new GridBagLayout());
+        setLayout(new BorderLayout());
         setBorder(BorderFactory.createTitledBorder("Generacion de rutina"));
 
-        GridBagConstraints c = new GridBagConstraints();
-        c.insets = new Insets(6, 6, 6, 6);
-        c.fill = GridBagConstraints.HORIZONTAL;
+        JPanel form = new JPanel(new GridLayout(6, 2, 10, 10));
+        form.add(new JLabel("Nombre cliente:")); form.add(txtCliente);
+        form.add(new JLabel("Semana:")); form.add(spSemana);
+        form.add(new JLabel("Cant. Cardio:")); form.add(spCardio);
+        form.add(new JLabel("Intensidad Cardio:")); form.add(cbIntCardio);
+        form.add(new JLabel("Cant. Fuerza:")); form.add(spFuerza);
+        form.add(new JLabel("Intensidad Fuerza:")); form.add(cbIntFuerza);
 
-        int row = 0;
-        agregarFila(c, row++, "Cliente:", txtCliente);
-        agregarFila(c, row++, "Semana:", spSemana);
-        agregarFila(c, row++, "Cantidad cardiovascular:", spCardio);
-        agregarFila(c, row++, "Intensidad cardiovascular:", cbIntCardio);
-        agregarFila(c, row++, "Cantidad fuerza:", spFuerza);
-        agregarFila(c, row++, "Intensidad fuerza:", cbIntFuerza);
-
-        JButton btnGenerar = new JButton("Generar rutina");
+        JButton btnGenerar = new JButton("Generar");
         btnGenerar.addActionListener(e -> generar());
 
         JButton btnCancelar = new JButton("Volver");
@@ -56,23 +39,8 @@ public class PanelGeneracion extends JPanel {
         bottom.add(btnCancelar);
         bottom.add(btnGenerar);
 
-        c.gridx = 0;
-        c.gridy = row;
-        c.gridwidth = 2;
-        c.weightx = 1.0;
-        add(bottom, c);
-    }
-
-    private void agregarFila(GridBagConstraints c, int row, String label, JComponent component) {
-        c.gridx = 0;
-        c.gridy = row;
-        c.gridwidth = 1;
-        c.weightx = 0.25;
-        add(new JLabel(label), c);
-
-        c.gridx = 1;
-        c.weightx = 0.75;
-        add(component, c);
+        add(form, BorderLayout.CENTER);
+        add(bottom, BorderLayout.SOUTH);
     }
 
     private void generar() {
@@ -94,13 +62,9 @@ public class PanelGeneracion extends JPanel {
         ControladorBackend.Intensidad intCardio = (ControladorBackend.Intensidad) cbIntCardio.getSelectedItem();
         ControladorBackend.Intensidad intFuerza = (ControladorBackend.Intensidad) cbIntFuerza.getSelectedItem();
 
+        // Enviamos el comando tal cual lo espera tu backend
         backend.enviar(new ControladorBackend.ComandoGenerarRutina(
-                cliente.trim(),
-                semana,
-                cantCardio,
-                intCardio,
-                cantFuerza,
-                intFuerza
+                cliente.trim(), semana, cantCardio, intCardio, cantFuerza, intFuerza
         ));
     }
 }

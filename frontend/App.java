@@ -1,7 +1,6 @@
 package frontend;
 
 import backend.ControladorBackend;
-
 import javax.swing.SwingUtilities;
 
 public class App {

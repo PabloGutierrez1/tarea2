@@ -5,3 +5,32 @@ codigo;nombre;tipo;intensidad;tiempoMin;descripcion;ultimaSemanaUsado
 4;Sentadillas;Fuerza;Intermedio;12;Sentadilla con técnica controlada y espalda neutra;0
 5;Sprints;Cardiovascular;Intermedio;8;Correr a máxima velocidad en intervalos cortos;0
 6;Peso muerto;Fuerza;Avanzado;10;Peso muerto con técnica correcta y carga moderada;0
+7;Bicicleta estática;Cardiovascular;Basico;20;Pedaleo a ritmo constante y resistencia baja;0
+8;Remo ergómetro;Cardiovascular;Alto rendimiento;15;Remo intenso con máxima resistencia en intervalos;0
+9;Flexiones de pecho;Fuerza;Basico;8;Flexiones clásicas manteniendo la espalda recta;0
+10;Dominadas;Fuerza;Avanzado;8;Elevación del cuerpo colgado de una barra;0
+11;Salto de cuerda;Cardiovascular;Intermedio;10;Saltar a ritmo moderado-alto;0
+12;Prensa de piernas;Fuerza;Intermedio;12;Empuje de peso en máquina de piernas;0
+13;Levantamiento olímpico;Fuerza;Alto rendimiento;15;Envión y arranque con peso máximo;0
+14;Natación intensa;Cardiovascular;Alto rendimiento;20;Nado estilo libre a máxima velocidad;0
+15;Sentadilla búlgara;Fuerza;Alto rendimiento;10;Sentadilla a una pierna con peso extra;0
+16;Zancadas;Fuerza;Basico;10;Zancadas alternadas cuidando la alineación de la rodilla;0
+17;Caminata rápida;Cardiovascular;Basico;30;Caminata a ritmo constante y paso firme;0
+18;Lanzamiento de balón;Fuerza;Intermedio;12;Lanzamiento de balón de 5kg contra pared;0
+19;Escaladores;Cardiovascular;Intermedio;10;Movimiento alternado de piernas en posición de plancha;0
+20;Zancadas con salto;Cardiovascular;Avanzado;12;Zancadas pliométricas alternando piernas rápidamente;0
+21;Press militar;Fuerza;Avanzado;10;Press de hombros de pie con barra y peso moderado;0
+22;Carrera de resistencia;Cardiovascular;Alto rendimiento;45;Correr a ritmo controlado buscando larga distancia;0
+23;Peso muerto rumano;Fuerza;Intermedio;12;Peso muerto enfocado en femorales con técnica controlada;0
+24;Elíptica;Cardiovascular;Basico;25;Ejercicio continuo en máquina elíptica con resistencia media;0
+25;Flexiones de tríceps;Fuerza;Basico;8;Flexiones con manos juntas enfocando el trabajo en tríceps;0
+26;Thrusters con mancuerna;Fuerza;Alto rendimiento;12;Sentadilla profunda combinada con press de hombros;0
+27;Remo con barra;Fuerza;Intermedio;10;Remo inclinado con barra manteniendo la espalda neutra;0
+28;Skipping;Cardiovascular;Basico;8;Elevación de rodillas al pecho en el lugar a ritmo medio;0
+29;Fondos en paralelas;Fuerza;Avanzado;10;Fondos corporales enfocados en pectoral y tríceps;0
+30;Pistol Squats;Fuerza;Alto rendimiento;8;Sentadilla profunda a una sola pierna sin apoyo;0
+31;Box jumps;Cardiovascular;Intermedio;12;Saltos explosivos sobre cajón de 60cm;0
+32;Jumping Jacks;Cardiovascular;Basico;10;Saltos abriendo y cerrando brazos y piernas;0
+33;Kettlebell swings;Fuerza;Intermedio;12;Balanceo de pesa rusa con empuje de cadera;0
+34;Battle ropes;Cardiovascular;Alto rendimiento;8;Trabajo de cuerdas a alta frecuencia e intensidad;0
+35;Snatch con mancuerna;Fuerza;Avanzado;12;Levantamiento explosivo de mancuerna desde el suelo;0

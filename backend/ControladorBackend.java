@@ -288,6 +288,7 @@ public class ControladorBackend {
         private final int totalAltoRendimiento;
 
         private final int tiempoTotal;
+        private final java.util.List<String> nombresEjercicios;
 
         public ResumenRutina(int totalCardio,
                              int totalFuerza,
@@ -295,7 +296,8 @@ public class ControladorBackend {
                              int totalIntermedio,
                              int totalAvanzado,
                              int totalAltoRendimiento,
-                             int tiempoTotal) {
+                             int tiempoTotal,
+                             java.util.List<String> nombresEjercicios) {
             this.totalCardio = totalCardio;
             this.totalFuerza = totalFuerza;
             this.totalBasico = totalBasico;
@@ -303,6 +305,7 @@ public class ControladorBackend {
             this.totalAvanzado = totalAvanzado;
             this.totalAltoRendimiento = totalAltoRendimiento;
             this.tiempoTotal = tiempoTotal;
+            this.nombresEjercicios = nombresEjercicios;
         }
 
         public int getTotalCardio() {
@@ -331,6 +334,10 @@ public class ControladorBackend {
 
         public int getTiempoTotal() {
             return tiempoTotal;
+        }
+
+        public java.util.List<String> getNombresEjercicios() {
+            return nombresEjercicios;
         }
     }
 
@@ -528,6 +535,7 @@ public class ControladorBackend {
         int intermedio = 0;
         int avanzado = 0;
         int alto = 0;
+        java.util.List<String> nombres = new ArrayList<>();
 
         for (Ejercicio e : rutinaActual.getEjercicios()) {
             if (e.getTipoEjercicio() == TipoEjercicio.CARDIOVASCULAR) cardio++;
@@ -537,9 +545,11 @@ public class ControladorBackend {
             if (e.getNivelIntensidad() == Intensidad.INTERMEDIO) intermedio++;
             if (e.getNivelIntensidad() == Intensidad.AVANZADO) avanzado++;
             if (e.getNivelIntensidad() == Intensidad.ALTO_RENDIMIENTO) alto++;
+            
+            nombres.add("- " + e.getNombreEjercicio() + " (" + e.getTipoEjercicio().getEtiqueta() + ", " + e.getNivelIntensidad().getEtiqueta() + ")");
         }
 
-        ResumenRutina resumen = new ResumenRutina(cardio, fuerza, basico, intermedio, avanzado, alto, rutinaActual.getTiempoTotal());
+        ResumenRutina resumen = new ResumenRutina(cardio, fuerza, basico, intermedio, avanzado, alto, rutinaActual.getTiempoTotal(), nombres);
         publicar(new EventoResumenRutina(resumen));
     }
 
