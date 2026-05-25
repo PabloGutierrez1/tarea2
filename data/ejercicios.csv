@@ -1,0 +1,7 @@
+codigo;nombre;tipo;intensidad;tiempoMin;descripcion;ultimaSemanaUsado
+1;Trote suave;Cardiovascular;Basico;15;Trotar a ritmo suave manteniendo respiración controlada;0
+2;Burpees;Cardiovascular;Avanzado;10;Realizar burpee completo con salto al final;0
+3;Plancha;Fuerza;Basico;5;Mantener cuerpo alineado apoyado en antebrazos;0
+4;Sentadillas;Fuerza;Intermedio;12;Sentadilla con técnica controlada y espalda neutra;0
+5;Sprints;Cardiovascular;Intermedio;8;Correr a máxima velocidad en intervalos cortos;0
+6;Peso muerto;Fuerza;Avanzado;10;Peso muerto con técnica correcta y carga moderada;0
